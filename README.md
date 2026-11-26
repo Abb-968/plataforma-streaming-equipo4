@@ -18,22 +18,22 @@ MVP desarrollado bajo metodología SCRUM para la asignatura **Métodos de Desarr
 
 ## Diagramas de Arquitectura y Diseño (MVP)
 
-Los archivos fuente editables en formato `.drawio` y sus exportaciones en `.png` se encuentran en [`docs/diagramas/`](docs/diagramas/).
+Los archivos híbridos (imagen y fuente editable para draw.io) se encuentran en [`docs/diagramas/`](docs/diagramas/).
 
 ### 1. Arquitectura y Despliegue (Docker Compose)
-![Arquitectura y Despliegue MVP](docs/diagramas/01_arquitectura_despliegue_mvp.png)
+![Arquitectura y Despliegue MVP](docs/diagramas/01_arquitectura_despliegue_mvp.drawio.png)
 
 ### 2. Modelo Entidad-Relación (PostgreSQL)
-![Modelo Entidad-Relación MVP](docs/diagramas/02_modelo_entidad_relacion_mvp.png)
+![Modelo Entidad-Relación MVP](docs/diagramas/02_modelo_entidad_relacion_mvp.drawio.png)
 
 ### 3. Secuencia de Reproducción y Reglas de Acceso (`CUN-02`)
-![Secuencia Reproducción CUN-02](docs/diagramas/03_secuencia_reproduccion_cun02.png)
+![Secuencia Reproducción CUN-02](docs/diagramas/03_secuencia_reproduccion_cun02.drawio.png)
 
 ### 4. Secuencia de Contratación y Cancelación (`CUN-01`)
-![Secuencia Contratación CUN-01](docs/diagramas/04_secuencia_contratacion_cun01.png)
+![Secuencia Contratación CUN-01](docs/diagramas/04_secuencia_contratacion_cun01.drawio.png)
 
 ### 5. Máquina de Estados de Suscripción
-![Estados de Suscripción](docs/diagramas/05_estados_suscripcion.png)
+![Estados de Suscripción](docs/diagramas/05_estados_suscripcion.drawio.png)
 
 ### 6. Máquina de Estados de Sesión de Reproducción
-![Estados de Sesión de Reproducción](docs/diagramas/06_estados_sesion_reproduccion.png)
+![Estados de Sesión de Reproducción](docs/diagramas/06_estados_sesion_reproduccion.drawio.png)
