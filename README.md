@@ -16,6 +16,23 @@ MVP desarrollado bajo metodología SCRUM para la asignatura **Métodos de Desarr
 
 ---
 
+## Acceso a la API y Despliegue (MVP)
+
+### Entorno Compartido en Vivo (Dev Tunnel)
+Durante las sesiones de desarrollo, integración con frontend y revisiones de Sprint, la API está disponible en línea en:
+* **Documentación interactiva (Swagger UI):** https://72q923p4-8000.usw3.devtunnels.ms/docs
+* **Verificación de estado (Healthcheck):** https://72q923p4-8000.usw3.devtunnels.ms/health
+
+*(Nota: Al abrir el enlace por primera vez en el navegador, haz clic en **Continue** en la pantalla de aviso de VS Code Dev Tunnels).*
+
+### Ejecución Local con Docker Compose
+Para levantar la base de datos PostgreSQL, Redis y el backend FastAPI en cualquier equipo local, ejecuta desde la raíz del repositorio:
+
+```bash
+docker compose up --build -d
+
+---
+
 ## Diagramas de Arquitectura y Diseño (MVP)
 
 Los archivos híbridos (imagen y fuente editable para draw.io) se encuentran en [`docs/diagramas/`](docs/diagramas/).
