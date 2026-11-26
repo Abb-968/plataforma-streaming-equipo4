@@ -13,3 +13,27 @@ MVP desarrollado bajo metodología SCRUM para la asignatura **Métodos de Desarr
 | **Alondra Lissette García García** | Development Team | Frontend Angular (Cuentas y Planes) | `SS-01` (`RN-05`) + `SS-02` |
 | **Emily Ashanty May Alemán** | Development Team | Frontend Angular & Shaka Player | `SS-04` (`CUN-02`) |
 | **Melina Alejandra Yáñez Rodríguez** | Development Team | UX/UI Figma & Frontend Admin | `SS-06` (`CUN-03`) + `SS-07` |
+
+---
+
+## Diagramas de Arquitectura y Diseño (MVP)
+
+Los archivos fuente editables en formato `.drawio` y sus exportaciones en `.png` se encuentran en [`docs/diagramas/`](docs/diagramas/).
+
+### 1. Arquitectura y Despliegue (Docker Compose)
+![Arquitectura y Despliegue MVP](docs/diagramas/01_arquitectura_despliegue_mvp.png)
+
+### 2. Modelo Entidad-Relación (PostgreSQL)
+![Modelo Entidad-Relación MVP](docs/diagramas/02_modelo_entidad_relacion_mvp.png)
+
+### 3. Secuencia de Reproducción y Reglas de Acceso (`CUN-02`)
+![Secuencia Reproducción CUN-02](docs/diagramas/03_secuencia_reproduccion_cun02.png)
+
+### 4. Secuencia de Contratación y Cancelación (`CUN-01`)
+![Secuencia Contratación CUN-01](docs/diagramas/04_secuencia_contratacion_cun01.png)
+
+### 5. Máquina de Estados de Suscripción
+![Estados de Suscripción](docs/diagramas/05_estados_suscripcion.png)
+
+### 6. Máquina de Estados de Sesión de Reproducción
+![Estados de Sesión de Reproducción](docs/diagramas/06_estados_sesion_reproduccion.png)
