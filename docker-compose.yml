@@ -1,5 +1,5 @@
 services:
-  db:
+  streaming_db:
     image: postgres:15-alpine
     container_name: streaming_db
     environment:
@@ -10,27 +10,35 @@ services:
       - "5432:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U streaming_user -d streaming_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
 
-  redis:
+  streaming_redis:
     image: redis:7-alpine
     container_name: streaming_redis
     ports:
       - "6379:6379"
 
-  api:
+  streaming_api:
     build: ./backend
     container_name: streaming_api
     ports:
       - "8000:8000"
+    environment:
+      DATABASE_URL: postgresql://streaming_user:streaming_pass@streaming_db:5432/streaming_db
+      REDIS_URL: redis://streaming_redis:6379/0
+      JWT_SECRET: equipo4_super_secreto_mvp_2026
     volumes:
       - ./backend:/app
-    environment:
-      DATABASE_URL: postgresql://streaming_user:streaming_pass@db:5432/streaming_db
-      REDIS_URL: redis://redis:6379/0
-      JWT_SECRET: clave_secreta_mvp_equipo4
     depends_on:
-      - db
-      - redis
+      streaming_db:
+        condition: service_healthy
+      streaming_redis:
+        condition: service_started
 
 volumes:
   pgdata:
