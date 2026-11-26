@@ -20,16 +20,28 @@ MVP desarrollado bajo metodología SCRUM para la asignatura **Métodos de Desarr
 
 ### Entorno Compartido en Vivo (Dev Tunnel)
 Durante las sesiones de desarrollo, integración con frontend y revisiones de Sprint, la API está disponible en línea en:
-* **Documentación interactiva (Swagger UI):** https://72q923p4-8000.usw3.devtunnels.ms/docs
-* **Verificación de estado (Healthcheck):** https://72q923p4-8000.usw3.devtunnels.ms/health
+* **Documentación interactiva (Swagger UI):** [https://72q923p4-8000.usw3.devtunnels.ms/docs](https://72q923p4-8000.usw3.devtunnels.ms/docs)
+* **Verificación de estado (Healthcheck):** [https://72q923p4-8000.usw3.devtunnels.ms/health](https://72q923p4-8000.usw3.devtunnels.ms/health)
 
 *(Nota: Al abrir el enlace por primera vez en el navegador, haz clic en **Continue** en la pantalla de aviso de VS Code Dev Tunnels).*
 
 ### Ejecución Local con Docker Compose
 Para levantar la base de datos PostgreSQL, Redis y el backend FastAPI en cualquier equipo local, ejecuta desde la raíz del repositorio:
 
-```bash
-docker compose up --build -d
+    docker compose up --build -d
+
+Una vez iniciados los contenedores, accede de forma local en:
+* **Swagger UI:** `http://localhost:8000/docs`
+* **Healthcheck:** `http://localhost:8000/health`
+
+### Cuentas Semilla y Datos de Prueba
+Al inicializar el volumen de PostgreSQL se cargan automáticamente los 3 planes comerciales (`Básico`, `Estándar`, `Premium`), el catálogo multi-región (`MX` y `US`) y las siguientes cuentas de prueba (contraseña universal: **`Demo1234!`**):
+
+| Correo | Contraseña | País | Rol | Configuración inicial |
+| :--- | :--- | :---: | :--- | :--- |
+| `suscriptor@equipo4.mx` | `Demo1234!` | `MX` | `SUSCRIPTOR` | Plan Estándar (2 pantallas), perfil Adulto e Infantil (NIP: `1234`) |
+| `usuario.us@equipo4.com` | `Demo1234!` | `US` | `SUSCRIPTOR` | Plan Básico (1 pantalla), catálogo licenciado en EE. UU. (`RN-03`) |
+| `admin@equipo4.mx` | `Demo1234!` | `MX` | `ADMIN` | Cuenta editorial para gestión de catálogo (`SS-06` / `SS-07`) |
 
 ---
 
@@ -54,3 +66,5 @@ Los archivos híbridos (imagen y fuente editable para draw.io) se encuentran en 
 
 ### 6. Máquina de Estados de Sesión de Reproducción
 ![Estados de Sesión de Reproducción](docs/diagramas/06_estados_sesion_reproduccion.drawio.png)
+
+---
